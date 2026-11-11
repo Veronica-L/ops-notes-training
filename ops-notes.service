@@ -1,0 +1,20 @@
+[Unit]
+Description=Ops Notes Training Service
+After=network.target
+
+[Service]
+Type=simple
+User=opsdemo
+Group=opsdemo
+WorkingDirectory=/opt/ops-notes
+EnvironmentFile=/etc/ops-notes.env
+ExecStart=/usr/bin/python3 /opt/ops-notes/app.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/ops-notes
+
+[Install]
+WantedBy=multi-user.target

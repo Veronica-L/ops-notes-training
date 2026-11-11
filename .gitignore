@@ -1,0 +1,8 @@
+.env
+.env.prod
+data/
+backups/
+certs/
+__pycache__/
+*.pyc
+evidence/
